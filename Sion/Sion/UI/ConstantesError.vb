@@ -1,0 +1,53 @@
+﻿Public Class ConstantesError
+    Public Const COMUNICAR_SISTEMA = vbCrLf & vbCrLf & "Comuníquese con Sistemas"
+    Public Const ARGUMENTO_NULL = "Envío de referencia nula ."
+    Public Const ARGUMENTO_NO_VALIDO = "Argumento no válido."
+    Public Const INDICE_NO_VALIDO = "Índice no válido."
+    Public Const DESREFERENCIAR = "Referencia a objeto inexistente."
+    Public Const DIVISION_ENTRE_0 = "Error división entre 0."
+    Public Const DESBORDAMIENTO = "La operación aritmética ha provocado un desbordamiento."
+    Public Const LLAMADO_EXCESIVO = "Método llamado demasiadas veces."
+    Public Const DIRECTORIO_NO_ENCONTRADO = "Directorio o archivo no encontrado."
+    Public Const LECTURA_SOBREPASADA = "Índice de lectura mayor al tamaño."
+    Public Const DESCONOCIDO = "Error desconocido."
+    Public Const REPORTE = "Argumento no válido (¿Reporte?)."
+
+    'CÓDIGOS DE ERROR EN SQL SERVER
+    Public Const CODIGO_ERROR_INTERBLOQUEO2 = 22022
+    Public Const CODIGO_ERROR_CONEXION = 0
+    Public Const CODIGO_ERROR_CONEXION2 = 19
+    Public Const CODIGO_ERROR_CONEXION3 = 40
+    Public Const CODIGO_ERROR_SIN_CONEXION = 53
+    Public Const CODIGO_ERROR_TIEMPO_ESPERA = -2
+    Public Const CODIGO_ERROR_SIN_CONEXION2 = -1
+    Public Const CODIGO_ERROR_SIN_CONEXION3 = 2
+    Public Const CODIGO_ERROR_SINTAXIS = 102
+    Public Const CODIGO_ERROR_PREFIJO_INEXISTENTE = 107
+    Public Const CODIGO_ERROR_ANIDAMIENTO_CASE = 125
+    Public Const CODIGO_ERROR_COLUMNA_INVALIDA = 207
+    Public Const CODIGO_ERROR_ENTRADA_SALIDA = 824
+    Public Const CODIGO_ERROR_PERMISOS_INSUFICIENTES = 916
+    Public Const CODIGO_ERROR_INTERBLOQUEO = 1205
+    Public Const CODIGO_ERROR_INICIO_SESION = 4064
+    Public Const CODIGO_ERROR_DATOS_TRUNCAR = 8152
+    Public Const CODIGO_ERROR_SIN_CONEXION4 = 10060
+    Public Const CODIGO_ERROR_SIN_CONEXION5 = 10061
+    'Public Const CODIGO_ERROR_ANIDAMIENTO_CASE = 125
+    'Public Const CODIGO_ERROR_ANIDAMIENTO_CASE = 125
+    ' Public Const CODIGO_ERROR_ANIDAMIENTO_CASE = 125
+    Public Const ERROR_SIN_CONEXION = "Problemas de conexión. "
+    Public Const ERROR_TIEMPO_ESPERA = "Tiempo de espera superado. "
+    Public Const ERROR_SINTAXIS = "Error de sintaxis. "
+    Public Const ERROR_PREFIJO_INEXISTENTE = "Prefijo inexistente. "
+    Public Const ERROR_ANIDAMIENTO_CASE = "Máximo de anidamientos Case. "
+    Public Const ERROR_COLUMNA_INVALIDA = "Nombre de columna no existe. "
+    Public Const ERROR_ENTRADA_SALIDA = "Error E/S. "
+    Public Const ERROR_PERMISOS_INSUFICIENTES = "Permisos insuficientes. "
+    Public Const ERROR_INTERBLOQUEO = "Transacción en interbloqueo. "
+    Public Const ERROR_INICIO_SESION = "Error inicio sesión BD. "
+    Public Const ERROR_DATOS_TRUNCAR = "Valor no permitido. "
+    Public Const ERROR_GENERAL = "Error inesperado. "
+    'Public Const ERROR_PERMISOS_INSUFICIENTES = "Permisos insuficientes. "
+    'Public Const ERROR_PERMISOS_INSUFICIENTES = "Permisos insuficientes. "
+    'Public Const ERROR_PERMISOS_INSUFICIENTES = "Permisos insuficientes. "
+End Class

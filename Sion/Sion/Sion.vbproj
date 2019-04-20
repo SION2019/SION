@@ -47,6 +47,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -72,13 +75,329 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="BL\AdmisionBLL.vb" />
+    <Compile Include="BL\AdmisionTipoDocumentoBLL.vb" />
+    <Compile Include="BL\Anexo1BLL.vb" />
+    <Compile Include="BL\Anexo2BLL.vb" />
+    <Compile Include="BL\Anexo3BLL.vb" />
+    <Compile Include="BL\ARTICULO_D.vb" />
+    <Compile Include="BL\BodegaBLL.vb" />
+    <Compile Include="BL\Buscar_Permisos_generales.vb" />
+    <Compile Include="BL\CAPITULO_D.vb" />
+    <Compile Include="BL\CARTICULO_D.vb" />
+    <Compile Include="BL\CATCUPS_D.vb" />
+    <Compile Include="BL\CCUPS_D.vb" />
+    <Compile Include="BL\ClaseNit.vb" />
+    <Compile Include="BL\ConfigPromedioDiaEstanciaBLL.vb" />
+    <Compile Include="BL\CUPS_D.vb" />
+    <Compile Include="BL\EmpresaBLL.vb" />
+    <Compile Include="BL\Fabrica.vb" />
+    <Compile Include="BL\FormFirmaDigital.Designer.vb" />
+    <Compile Include="BL\FormFirmaDigital.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="BL\FormFirmaDigitalEmple.Designer.vb" />
+    <Compile Include="BL\FormFirmaDigitalEmple.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BL\Form_firmas.designer.vb" />
+    <Compile Include="BL\Form_firmas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BL\GCUPS_D.vb" />
+    <Compile Include="BL\GRUPOQX_D.vb" />
+    <Compile Include="BL\GRUPO_D.vb" />
+    <Compile Include="BL\ISS_D.vb" />
+    <Compile Include="BL\Lista_Manual_D.vb" />
+    <Compile Include="BL\MANUAL_D.vb" />
+    <Compile Include="BL\ModuloPerfilBLL.vb" />
+    <Compile Include="BL\PerfilParaclinicoBLL.vb" />
+    <Compile Include="BL\PopupNotify.Designer.vb" />
+    <Compile Include="BL\PrincipalBLL.vb" />
+    <Compile Include="BL\ProductoBLL.vb" />
+    <Compile Include="BL\ProductoCualidadBLL.vb" />
+    <Compile Include="BL\ProductoLineaBLL.vb" />
+    <Compile Include="BL\ProductoMarcaBLL.vb" />
+    <Compile Include="BL\ProductoPresentacionBLL.vb" />
+    <Compile Include="BL\ResolucionBLL.vb" />
+    <Compile Include="BL\SALA_D.vb" />
+    <Compile Include="BL\SCUPS_D.vb" />
+    <Compile Include="BL\SECCION_D.vb" />
+    <Compile Include="BL\SGCUPS_D.vb" />
+    <Compile Include="BL\SoatBLL.vb" />
+    <Compile Include="BL\TarifaTrasladoBLL.vb" />
+    <Compile Include="BL\ValidarDigito.vb" />
+    <Compile Include="BL\ViaAdministracionBLL.vb" />
+    <Compile Include="DL\Admin\AreaServicioDAL.vb" />
+    <Compile Include="DL\Admin\BusquedaPermisoDAL.vb" />
+    <Compile Include="DL\Admin\CambiarClaveDAL.vb" />
+    <Compile Include="DL\Admin\ClienteDAL.vb" />
+    <Compile Include="DL\Admin\EmpleadoDAL.vb" />
+    <Compile Include="DL\Admin\EmpresaDAL.vb" />
+    <Compile Include="DL\Admin\EmpresaModuloDAL.vb" />
+    <Compile Include="DL\Admin\Form_busqueda_c.vb" />
+    <Compile Include="DL\Admin\InicioDAL.vb" />
+    <Compile Include="DL\Admin\InicioSesionDAL.vb" />
+    <Compile Include="DL\Admin\ListaPrecioDAL.vb" />
+    <Compile Include="DL\Admin\perfilDAL.vb" />
+    <Compile Include="DL\Admin\PerfilModuloDAL.vb" />
+    <Compile Include="DL\Admin\PrincipalDAL.vb" />
+    <Compile Include="DL\Admin\ProveedorDAL.vb" />
+    <Compile Include="DL\Admin\PuntoServicioDAL.vb" />
+    <Compile Include="DL\Admin\ResolucionDAL.vb" />
+    <Compile Include="DL\Admin\TerceroDAL.vb" />
+    <Compile Include="DL\Asis\AdmisionDAL.vb" />
+    <Compile Include="DL\Asis\AfiliacionDAL.vb" />
+    <Compile Include="DL\Asis\AmbulanciaTrasladoDAL.vb" />
+    <Compile Include="DL\Asis\Anexo1DAL.vb" />
+    <Compile Include="DL\Asis\Anexo2DAL.vb" />
+    <Compile Include="DL\Asis\Anexo3DAL.vb" />
+    <Compile Include="DL\Asis\AntibioticoJustificacionDAL.vb" />
+    <Compile Include="DL\Asis\ArticuloDAL.vb" />
+    <Compile Include="DL\Asis\ArticuloSOATCapituloDAL.vb" />
+    <Compile Include="DL\Asis\BloqueDAL.vb" />
+    <Compile Include="DL\Asis\CamaDAL.vb" />
+    <Compile Include="DL\Asis\CapituloDAL.vb" />
+    <Compile Include="DL\Asis\CateterCentralDAL.vb" />
+    <Compile Include="DL\Asis\CausaExternaDAL.vb" />
+    <Compile Include="DL\Asis\ClaseSocialDAL.vb" />
+    <Compile Include="DL\Asis\ComiteTecnicoCientificoDAL.vb" />
+    <Compile Include="DL\Asis\ConcurrenciaDAL.vb" />
+    <Compile Include="DL\Asis\ConfAuditoriaDAL.vb" />
+    <Compile Include="DL\Asis\ConfigProcedExamDAL.vb" />
+    <Compile Include="DL\Asis\ConfiguracionChequeoDAL.vb" />
+    <Compile Include="DL\Asis\ContratoDAL.vb" />
+    <Compile Include="DL\Asis\CpisDAL.vb" />
+    <Compile Include="DL\Asis\CupsCapituloDAL.vb" />
+    <Compile Include="DL\Asis\CupsCategoriaDAL.vb" />
+    <Compile Include="DL\Asis\CupsDAL.vb" />
+    <Compile Include="DL\Asis\CupsGrupoDAL.vb" />
+    <Compile Include="DL\Asis\CupsSeccionDAL.vb" />
+    <Compile Include="DL\Asis\CupsSubgrupoDAL.vb" />
+    <Compile Include="DL\Asis\CuracionDAL.vb" />
+    <Compile Include="DL\Asis\DestinoDAL.vb" />
+    <Compile Include="DL\Asis\DiagnosticoDAL.vb" />
+    <Compile Include="DL\Asis\DocumentoDAL.vb" />
+    <Compile Include="DL\Asis\EcocardiogramaDAL.vb" />
+    <Compile Include="DL\Asis\EpicrisisDAL.vb" />
+    <Compile Include="DL\Asis\EpsDAL.vb" />
+    <Compile Include="DL\Asis\EscalaBradenDAL.vb" />
+    <Compile Include="DL\Asis\EscalaMorseDAL.vb" />
+    <Compile Include="DL\Asis\EstanciaConfigProcedimientoDAL.vb" />
+    <Compile Include="DL\Asis\EstanciaProlongadaDAL.vb" />
+    <Compile Include="DL\Asis\ExamenParaclinicoDAL.vb" />
+    <Compile Include="DL\Asis\ExamenResultadoDAL.vb" />
+    <Compile Include="DL\Asis\FilaDAL.vb" />
+    <Compile Include="DL\Asis\FirmaDAL.vb" />
+    <Compile Include="DL\Asis\FormatoIngresoDAL.vb" />
+    <Compile Include="DL\Asis\FuripsDAL.vb" />
+    <Compile Include="DL\Asis\HemoderivadoConfigProcedimientoDAL.vb" />
+    <Compile Include="DL\Asis\HemodialisisDAL.vb" />
+    <Compile Include="DL\Asis\HistoriaClinicaDAL.vb" />
+    <Compile Include="DL\Asis\InformeQuirurgicoDAL.vb" />
+    <Compile Include="DL\Asis\InstitucionDAL.vb" />
+    <Compile Include="DL\Asis\InsumoPeriodicidadDAL.vb" />
+    <Compile Include="DL\Asis\IssDAL.vb" />
+    <Compile Include="DL\Asis\ListaCheckDAL.vb" />
+    <Compile Include="DL\Asis\ListaPrecioMedicamentoDAL.vb" />
+    <Compile Include="DL\Asis\ManualTarifarioDAL.vb" />
+    <Compile Include="DL\Asis\ManualTarifarioListaDAL.vb" />
+    <Compile Include="DL\Asis\MedicamentoNoPosDAL.vb" />
+    <Compile Include="DL\Asis\OtroSiDAL.vb" />
+    <Compile Include="DL\Asis\OxigenoConfDAL.vb" />
+    <Compile Include="DL\Asis\PacienteDAL.vb" />
+    <Compile Include="DL\Asis\ParametroConfigProcedimientoDAL.vb" />
+    <Compile Include="DL\Asis\ParametroDAL.vb" />
+    <Compile Include="DL\Asis\PedidoFarmaciaDAL.vb" />
+    <Compile Include="DL\Asis\PedidoServicioDAL.vb" />
+    <Compile Include="DL\Asis\ProcedimientoConfigDAL.vb" />
+    <Compile Include="DL\Asis\RecetarioDAL.vb" />
+    <Compile Include="DL\Asis\ReferenciaTipoDAL.vb" />
+    <Compile Include="DL\Asis\SabanaAplicacionMedDAL.vb" />
+    <Compile Include="DL\Asis\SoatDAL.vb" />
+    <Compile Include="DL\Asis\SoatGrupoDAL.vb" />
+    <Compile Include="DL\Asis\SoatGrupoQuirurgicoDAL.vb" />
+    <Compile Include="DL\Asis\SoatSalaProcedimientosDAL.vb" />
+    <Compile Include="DL\Asis\SoatSeccionDAL.vb" />
+    <Compile Include="DL\Asis\SondaVersicalDAL.vb" />
+    <Compile Include="DL\Asis\SoporteConsolidadoDAL.vb" />
+    <Compile Include="DL\Asis\TarifaServicioDAL.vb" />
+    <Compile Include="DL\Asis\TipoExamenDAL.vb" />
+    <Compile Include="DL\Asis\TransfusionSanguineaDAL.vb" />
+    <Compile Include="DL\Asis\TrasladoCamaDAL.vb" />
+    <Compile Include="DL\Asis\TrasladoPacienteDAL.vb" />
+    <Compile Include="DL\Asis\TriageDAL.vb" />
+    <Compile Include="DL\Asis\ValoracionNutricionalDAL.vb" />
+    <Compile Include="DL\Asis\ViaIngresoDAL.vb" />
+    <Compile Include="Ent\Admision.vb" />
+    <Compile Include="Ent\Anexo3.vb" />
+    <Compile Include="Ent\ArticuloSoat.vb" />
+    <Compile Include="Ent\BodegaE.vb" />
+    <Compile Include="Ent\CambiarClave.vb" />
+    <Compile Include="Ent\CateterCentral.vb" />
+    <Compile Include="Ent\Cliente.vb" />
+    <Compile Include="Ent\ComiteCTC.vb" />
+    <Compile Include="Ent\ComiteCTCR.vb" />
+    <Compile Include="Ent\ComiteCTCRR.vb" />
+    <Compile Include="Ent\ConfigParametroExam.vb" />
+    <Compile Include="Ent\ConfigReferenciaExam.vb" />
+    <Compile Include="Ent\ConfiguracionAuditoria.vb" />
+    <Compile Include="Ent\ConfiguracionCama.vb" />
+    <Compile Include="Ent\ConfiguracionChequeo.vb" />
+    <Compile Include="Ent\ConfiguracionDiagnostico.vb" />
+    <Compile Include="Ent\ConfiguracionEnvioCorreo.vb" />
+    <Compile Include="Ent\ConfiguracionGeneral.vb" />
+    <Compile Include="Ent\ConfiguracionProcedimientoCups.vb" />
+    <Compile Include="Ent\ConfiguracionProcedimientos.vb" />
+    <Compile Include="Ent\ContratoEps.vb" />
+    <Compile Include="Ent\Correo.vb" />
+    <Compile Include="Ent\Curacion.vb" />
+    <Compile Include="Ent\Documentacion.vb" />
+    <Compile Include="Ent\Eco.vb" />
+    <Compile Include="Ent\Ecocardiograma.vb" />
+    <Compile Include="Ent\EcocardiogramaEstres.vb" />
+    <Compile Include="Ent\EcocardiogramaEstresR.vb" />
+    <Compile Include="Ent\EcocardiogramaEstresRR.vb" />
+    <Compile Include="Ent\EcocardiogramaR.vb" />
+    <Compile Include="Ent\EcocardiogramaRR.vb" />
+    <Compile Include="Ent\EcoR.vb" />
+    <Compile Include="Ent\EcoRR.vb" />
+    <Compile Include="Ent\Empresa.vb" />
+    <Compile Include="Ent\Enfermeria.vb" />
+    <Compile Include="Ent\EnfermeriaR.vb" />
+    <Compile Include="Ent\EnfermeriaRR.vb" />
+    <Compile Include="Ent\EscalaMorse.vb" />
+    <Compile Include="Ent\EvolucionMedica.vb" />
+    <Compile Include="Ent\EvolucionMedicaR.vb" />
+    <Compile Include="Ent\EvolucionMedicaRR.vb" />
+    <Compile Include="Ent\ExamenResultado.vb" />
+    <Compile Include="Ent\ExamenResultadoR.vb" />
+    <Compile Include="Ent\ExamenResultadoRR.vb" />
+    <Compile Include="Ent\FacturaAtencion.vb" />
+    <Compile Include="Ent\FacturaAtencionAsistencial.vb" />
+    <Compile Include="Ent\FacturaAtencionAsistencialR.vb" />
+    <Compile Include="Ent\FacturaAtencionAsistencialRR.vb" />
+    <Compile Include="Ent\FacturacionDiaria.vb" />
+    <Compile Include="Ent\FacturaRadicacionParams.vb" />
+    <Compile Include="Ent\Fisioterapia.vb" />
+    <Compile Include="Ent\FisioterapiaR.vb" />
+    <Compile Include="Ent\FisioterapiaRR.vb" />
+    <Compile Include="Ent\FormatoIngreso.vb" />
+    <Compile Include="Ent\FuRips.vb" />
+    <Compile Include="Ent\Glasgow.vb" />
+    <Compile Include="Ent\GlucometriaEnfermeria.vb" />
+    <Compile Include="Ent\GlucometriaEnfermeriaR.vb" />
+    <Compile Include="Ent\GlucometriaEnfermeriaRR.vb" />
+    <Compile Include="Ent\HemoderivadoEnfermeria.vb" />
+    <Compile Include="Ent\HemoderivadoEnfermeriaR.vb" />
+    <Compile Include="Ent\HemoderivadoEnfermeriaRR.vb" />
+    <Compile Include="Ent\Hemodialisis.vb" />
+    <Compile Include="Ent\HemodialisisR.vb" />
+    <Compile Include="Ent\HemodialisisRR.vb" />
+    <Compile Include="Ent\HistorialAtencion.vb" />
+    <Compile Include="Ent\InfoIngreso.vb" />
+    <Compile Include="Ent\InfoIngresoAdulto.vb" />
+    <Compile Include="Ent\InfoIngresoAdultoR.vb" />
+    <Compile Include="Ent\InfoIngresoAdultoRR.vb" />
+    <Compile Include="Ent\InfoIngresoNeonato.vb" />
+    <Compile Include="Ent\InfoIngresoNeonatoR.vb" />
+    <Compile Include="Ent\InfoIngresoNeonatoRR.vb" />
+    <Compile Include="Ent\InformeQx.vb" />
+    <Compile Include="Ent\InformeQxR.vb" />
+    <Compile Include="Ent\InformeQxRR.vb" />
+    <Compile Include="Ent\InsumoEnfermeria.vb" />
+    <Compile Include="Ent\InsumoEnfermeriaR.vb" />
+    <Compile Include="Ent\InsumoEnfermeriaRR.vb" />
+    <Compile Include="Ent\InsumoFisioterapia.vb" />
+    <Compile Include="Ent\InsumoFisioterapiaR.vb" />
+    <Compile Include="Ent\InsumoFisioterapiaRR.vb" />
+    <Compile Include="Ent\InterconsultaMedica.vb" />
+    <Compile Include="Ent\InterconsultaMedicaR.vb" />
+    <Compile Include="Ent\InterconsultaMedicaRR.vb" />
+    <Compile Include="Ent\JustificacionMedicamento.vb" />
+    <Compile Include="Ent\JustificacionMedicamentoR.vb" />
+    <Compile Include="Ent\JustificacionMedicamentoRR.vb" />
+    <Compile Include="Ent\Justificacion_antibioticos.vb" />
+    <Compile Include="Ent\Linea.vb" />
+    <Compile Include="Ent\ListaCheck.vb" />
+    <Compile Include="Ent\ListaCheckR.vb" />
+    <Compile Include="Ent\ListaCheckRR.vb" />
+    <Compile Include="Ent\ListaDocumentos.vb" />
+    <Compile Include="Ent\ListaEmpleado.vb" />
+    <Compile Include="Ent\ListaPrecioMedicamento.vb" />
+    <Compile Include="Ent\ManualCUPS.vb" />
+    <Compile Include="Ent\ManualISS.vb" />
+    <Compile Include="Ent\ManualProcedimientos.vb" />
+    <Compile Include="Ent\ManualSOAT.vb" />
+    <Compile Include="Ent\ManualTarifario.vb" />
+    <Compile Include="Ent\Marca.vb" />
+    <Compile Include="Ent\ModuloPerfil.vb" />
+    <Compile Include="Ent\Nebulizacion.vb" />
+    <Compile Include="Ent\NebulizacionR.vb" />
+    <Compile Include="Ent\NebulizacionRR.vb" />
+    <Compile Include="Ent\NotaEnfermeria.vb" />
+    <Compile Include="Ent\NotaEnfermeriaR.vb" />
+    <Compile Include="Ent\NotaEnfermeriaRR.vb" />
+    <Compile Include="Ent\notaFisioterapia.vb" />
+    <Compile Include="Ent\notaFisioterapiaR.vb" />
+    <Compile Include="Ent\notaFisioterapiaRR.vb" />
+    <Compile Include="Ent\OrdenMedica.vb" />
+    <Compile Include="Ent\OrdenMedicaNutricion.vb" />
+    <Compile Include="Ent\OrdenMedicaNutricionR.vb" />
+    <Compile Include="Ent\OrdenMedicaNutricionRR.vb" />
+    <Compile Include="Ent\OrdenMedicaR.vb" />
+    <Compile Include="Ent\OrdenMedicaRR.vb" />
+    <Compile Include="Ent\OtroSi.vb" />
+    <Compile Include="Ent\Oxigeno.vb" />
+    <Compile Include="Ent\OxigenoCPAP.vb" />
+    <Compile Include="Ent\OxigenoR.vb" />
+    <Compile Include="Ent\OxigenoRR.vb" />
+    <Compile Include="Ent\Paciente.vb" />
+    <Compile Include="Ent\ParaclinicoEnfermeria.vb" />
+    <Compile Include="Ent\ParaclinicoEnfermeriaR.vb" />
+    <Compile Include="Ent\ParaclinicoEnfermeriaRR.vb" />
+    <Compile Include="Ent\PedidoFarmacia.vb" />
+    <Compile Include="Ent\Pedido_Servicio.vb" />
+    <Compile Include="Ent\Perfil.vb" />
+    <Compile Include="Ent\PerfilParaclinico.vb" />
+    <Compile Include="Ent\PeriodicInsumos.vb" />
+    <Compile Include="Ent\Prefactura.vb" />
+    <Compile Include="Ent\PrefacturaR.vb" />
+    <Compile Include="Ent\PrefacturaRR.vb" />
+    <Compile Include="Ent\Presentacion.vb" />
+    <Compile Include="Ent\Principal.vb" />
+    <Compile Include="Ent\Procedimientos.vb" />
+    <Compile Include="Ent\Producto.vb" />
+    <Compile Include="Ent\Proveedor.vb" />
+    <Compile Include="Ent\PuntoServicio.vb" />
+    <Compile Include="Ent\Recetario.vb" />
+    <Compile Include="Ent\Remision.vb" />
+    <Compile Include="Ent\RemisionR.vb" />
+    <Compile Include="Ent\RemisionRR.vb" />
+    <Compile Include="Ent\ReporteParams.vb" />
+    <Compile Include="Ent\Resolucion.vb" />
+    <Compile Include="Ent\Rips.vb" />
+    <Compile Include="Ent\Sabana.vb" />
+    <Compile Include="Ent\SabanaAplicacionMed.vb" />
+    <Compile Include="Ent\SabanaAplicacionMedR.vb" />
+    <Compile Include="Ent\SabanaAplicacionMedRR.vb" />
+    <Compile Include="Ent\SeguimientoFacturacion.vb" />
+    <Compile Include="Ent\SesionActual.vb" />
+    <Compile Include="Ent\SGCUPS.vb" />
+    <Compile Include="Ent\SolicitudMedicamentosNoPos.vb" />
+    <Compile Include="Ent\TarifaDeServicios.vb" />
+    <Compile Include="Ent\TerapiaFisicaYRespiratoria.vb" />
+    <Compile Include="Ent\TerapiaFisicaYRespiratoriaR.vb" />
+    <Compile Include="Ent\TerapiaFisicaYRespiratoriaRR.vb" />
+    <Compile Include="Ent\TerceroI.vb" />
+    <Compile Include="Ent\TipoDocumentos.vb" />
+    <Compile Include="Ent\TransfusionSanguinea.vb" />
+    <Compile Include="Ent\ValoracionASCE.vb" />
+    <Compile Include="Ent\ValoracionNutricional.vb" />
+    <Compile Include="Ent\ViaAdministracion.vb" />
+    <Compile Include="Ent\VistaPrevia.vb" />
+    <Compile Include="Ent\VistaPreviaR.vb" />
+    <Compile Include="Ent\VistaPreviaRR.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -94,13 +413,2236 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Rep\CertificadoSoat.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CertificadoSoat.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\PLANTILLA_CONTROL_LIQUIDO.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PLANTILLA_CONTROL_LIQUIDO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\PLANTILLA_FACTURA.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PLANTILLA_FACTURA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\PLANTILLA_FACTURA_D.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PLANTILLA_FACTURA_D.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptAMBUQ.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAMBUQ.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptAnexo11.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAnexo1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptAnexo21.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAnexo2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptAnexo31.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAnexo3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptBraden.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBraden.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptCaja_Copi.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCaja_Copi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptCateterCentral.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCateterCentral.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptComparta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptComparta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptConcurrencia.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptConcurrencia.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Rep\rptConcurrenciaEnfermeria.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptConcurrenciaEnfermeria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptConsetimiento.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptConsetimiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptCPIS.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCPIS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptCTC.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCTC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptCuracion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCuracion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptDisentimiento.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDisentimiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptEcocardiograma.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEcocardiograma.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptEcoEstres.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEcoEstres.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptEpicrisis.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEpicrisis.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptEscala_Morse.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEscala_Morse.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptEstanciaProlongada.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEstanciaProlongada.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptEvolucionMedica.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEvolucionMedica.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptExamenesLab.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptExamenesLab.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptFacturaAsistencial.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFacturaAsistencial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptFacturaCertificado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFacturaCertificado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptFacturaExterna.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFacturaExterna.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptFacturaRadicacion1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFacturaRadicacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptFacturaRemision.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFacturaRemision.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptFisioterapiaNebulizacion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFisioterapiaNebulizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptFisioterapiaOxigeno.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFisioterapiaOxigeno.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptFurips1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFurips.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptGlucometria.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGlucometria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptHemodialisis.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHemodialisis.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptHistorialAtencionEgreso1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHistorialAtencionEgreso.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptHistorialAtencionIngreso1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHistorialAtencionIngreso.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptHojaIngreso.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHojaIngreso.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptImagenologia.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptImagenologia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptImagenologiaAtencion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptImagenologiaAtencion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptInfeccionIH.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInfeccionIH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptInfoIngresoAdulto.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInfoIngresoAdulto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptInfoIngresoNeonato.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInfoIngresoNeonato.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptInformeQx.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInformeQx.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptInterconsulta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInterconsulta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptJustificacion_Antibioticos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptJustificacion_Antibioticos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptListaPrecio1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListaPrecio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptNotaEnfermeria.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNotaEnfermeria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptNotaFisioterapia.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNotaFisioterapia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptOrdenInsumoEnfer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOrdenInsumoEnfer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptOrdenInsumoFisio.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOrdenInsumoFisio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptOrdenMedica.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOrdenMedica.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptOxigenoFisioterapia.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOxigenoFisioterapia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptParametroVentilacion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptParametroVentilacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptPedidoComidas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPedidoComidas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptPrefactura.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrefactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptRecetario.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRecetario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptRemision.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRemision.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptResultado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResultado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptRetiroVoluntario.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRetiroVoluntario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptSabanaAplicacion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSabanaAplicacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptSolicitud_Medicamento.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSolicitud_Medicamento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptSonda_Vesical.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSonda_Vesical.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptTransfusion_Sanguinea.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTransfusion_Sanguinea.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptValorNutricional.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptValorNutricional.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rptVenopuncion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptVenopuncion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rpt_Admisiones1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Admisiones.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rep\rpt_Coomeva.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Coomeva.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\Area_Servicio.Designer.vb">
+      <DependentUpon>Area_Servicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\Area_Servicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\FormAreaServicio.Designer.vb">
+      <DependentUpon>FormAreaServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\FormAreaServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\FormAreaServicioConfig.Designer.vb">
+      <DependentUpon>FormAreaServicioConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\FormAreaServicioConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\FormCambiarClave.Designer.vb">
+      <DependentUpon>FormCambiarClave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\FormCambiarClave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\FormConfigurarPDoc.Designer.vb">
+      <DependentUpon>FormConfigurarPDoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\FormConfigurarPDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\FormModulosEmpresa.Designer.vb">
+      <DependentUpon>FormModulosEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\FormModulosEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\FormPuntoServicio.Designer.vb">
+      <DependentUpon>FormPuntoServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\FormPuntoServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\FormResoluciones.Designer.vb">
+      <DependentUpon>FormResoluciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\FormResoluciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\FormTercero.Designer.vb">
+      <DependentUpon>FormTercero.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\FormTercero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\Form_BusquedaGeneral.Designer.vb">
+      <DependentUpon>Form_BusquedaGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\Form_BusquedaGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\Form_empresas.Designer.vb">
+      <DependentUpon>Form_empresas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\Form_empresas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\Form_listado_medicamento_dispositivos_medicos.Designer.vb">
+      <DependentUpon>Form_listado_medicamento_dispositivos_medicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\Form_listado_medicamento_dispositivos_medicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\Form_Resoluciones.Designer.vb">
+      <DependentUpon>Form_Resoluciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\Form_Resoluciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\Modulos_perfil.Designer.vb">
+      <DependentUpon>Modulos_perfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\Modulos_perfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\Perfiles.Designer.vb">
+      <DependentUpon>Perfiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\Perfiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Administracion\Punto_Servicio.Designer.vb">
+      <DependentUpon>Punto_Servicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Administracion\Punto_Servicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Fom_consolidado_comida.Designer.vb">
+      <DependentUpon>Fom_consolidado_comida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Fom_consolidado_comida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAdmision.Designer.vb">
+      <DependentUpon>FormAdmision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAdmision.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnestesiologo.Designer.vb">
+      <DependentUpon>FormAnestesiologo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnestesiologo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnexo1.Designer.vb">
+      <DependentUpon>FormAnexo1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnexo1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnexo2.Designer.vb">
+      <DependentUpon>FormAnexo2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnexo2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnexo3.Designer.vb">
+      <DependentUpon>FormAnexo3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnexo3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnexo3Concurrencia.Designer.vb">
+      <DependentUpon>FormAnexo3Concurrencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormAnexo3Concurrencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormConcurrencia.Designer.vb">
+      <DependentUpon>FormConcurrencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormConcurrencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormEpicrisis.Designer.vb">
+      <DependentUpon>FormEpicrisis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormEpicrisis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormEstadisticaEnfermedades.Designer.vb">
+      <DependentUpon>FormEstadisticaEnfermedades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormEstadisticaEnfermedades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormExamenParaclinicos.Designer.vb">
+      <DependentUpon>FormExamenParaclinicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormExamenParaclinicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormExamenParaclinicosNuevo.Designer.vb">
+      <DependentUpon>FormExamenParaclinicosNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormExamenParaclinicosNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormFormatoIngreso.Designer.vb">
+      <DependentUpon>FormFormatoIngreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormFormatoIngreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormFuRips.Designer.vb">
+      <DependentUpon>FormFuRips.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormFuRips.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormGlasgow.Designer.vb">
+      <DependentUpon>FormGlasgow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormGlasgow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormHojaRuta.Designer.vb">
+      <DependentUpon>FormHojaRuta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormHojaRuta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormInformeQX.Designer.vb">
+      <DependentUpon>FormInformeQX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormInformeQX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormListaAdmision.Designer.vb">
+      <DependentUpon>FormListaAdmision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormListaAdmision.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormListaExamen.Designer.vb">
+      <DependentUpon>FormListaExamen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormListaExamen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormOtraConfiguracion.Designer.vb">
+      <DependentUpon>FormOtraConfiguracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormOtraConfiguracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormOxigeno.Designer.vb">
+      <DependentUpon>FormOxigeno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormOxigeno.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormParametroExamConfiguracion.Designer.vb">
+      <DependentUpon>FormParametroExamConfiguracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormParametroExamConfiguracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormParametros.Designer.vb">
+      <DependentUpon>FormParametros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormParametros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormPedidoFarmacia.Designer.vb">
+      <DependentUpon>FormPedidoFarmacia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormPedidoFarmacia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormProgramacionCitaMedica.Designer.vb">
+      <DependentUpon>FormProgramacionCitaMedica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormProgramacionCitaMedica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormReferenciaExamConf.Designer.vb">
+      <DependentUpon>FormReferenciaExamConf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormReferenciaExamConf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormRemisionAnexo.Designer.vb">
+      <DependentUpon>FormRemisionAnexo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormRemisionAnexo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormSabanaAplicacionMed.Designer.vb">
+      <DependentUpon>FormSabanaAplicacionMed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormSabanaAplicacionMed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormSolicitudLab.Designer.vb">
+      <DependentUpon>FormSolicitudLab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormSolicitudLab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormTipoExamen.Designer.vb">
+      <DependentUpon>FormTipoExamen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormTipoExamen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormValoracionASCE.Designer.vb">
+      <DependentUpon>FormValoracionASCE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormValoracionASCE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormVisorHojaRuta.Designer.vb">
+      <DependentUpon>FormVisorHojaRuta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\FormVisorHojaRuta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Admisiones.vb" />
+    <Compile Include="UI\Asistencial\Form_afiliados.Designer.vb">
+      <DependentUpon>Form_afiliados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_afiliados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ARTICULO_SOAT.Designer.vb">
+      <DependentUpon>Form_ARTICULO_SOAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ARTICULO_SOAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Braden.Designer.vb">
+      <DependentUpon>Form_Braden.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Braden.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Camas.Designer.vb">
+      <DependentUpon>Form_Camas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Camas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CAPITULO_CUPS.Designer.vb">
+      <DependentUpon>Form_CAPITULO_CUPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CAPITULO_CUPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CAPITULO_SOAT.Designer.vb">
+      <DependentUpon>Form_CAPITULO_SOAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CAPITULO_SOAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CARTICULO_SOAT.Designer.vb">
+      <DependentUpon>Form_CARTICULO_SOAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CARTICULO_SOAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CATEGORIA_CUPS.Designer.vb">
+      <DependentUpon>Form_CATEGORIA_CUPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CATEGORIA_CUPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CateterCentral.Designer.vb">
+      <DependentUpon>Form_CateterCentral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CateterCentral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_causa_externa.Designer.vb">
+      <DependentUpon>Form_causa_externa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_causa_externa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_clase_social.Designer.vb">
+      <DependentUpon>Form_clase_social.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_clase_social.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Comidas.Designer.vb">
+      <DependentUpon>Form_Comidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Comidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ComiteIH.Designer.vb">
+      <DependentUpon>Form_ComiteIH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ComiteIH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Comite_Cientifico.Designer.vb">
+      <DependentUpon>Form_Comite_Cientifico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Comite_Cientifico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_configuracion_procedimiento.Designer.vb">
+      <DependentUpon>Form_configuracion_procedimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_configuracion_procedimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Conf_Perfil_Paraclinico.Designer.vb">
+      <DependentUpon>Form_Conf_Perfil_Paraclinico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Conf_Perfil_Paraclinico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_consolidado_comida_detallado.Designer.vb">
+      <DependentUpon>Form_consolidado_comida_detallado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_consolidado_comida_detallado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CPIS.Designer.vb">
+      <DependentUpon>Form_CPIS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CPIS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CUPS.Designer.vb">
+      <DependentUpon>Form_CUPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_CUPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Curaciones.Designer.vb">
+      <DependentUpon>Form_Curaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Curaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_destino.Designer.vb">
+      <DependentUpon>Form_destino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_destino.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_diagnostico_cie.Designer.vb">
+      <DependentUpon>Form_diagnostico_cie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_diagnostico_cie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ecocardiograma.Designer.vb">
+      <DependentUpon>Form_ecocardiograma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ecocardiograma.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\form_eps.Designer.vb">
+      <DependentUpon>form_eps.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\form_eps.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_EscalaM.Designer.vb">
+      <DependentUpon>Form_EscalaM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_EscalaM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_especialidades.Designer.vb">
+      <DependentUpon>Form_especialidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_especialidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_estado_atencion.Designer.vb">
+      <DependentUpon>Form_estado_atencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_estado_atencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_estado_civil.Designer.vb">
+      <DependentUpon>Form_estado_civil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_estado_civil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Estancia_Prolongada.Designer.vb">
+      <DependentUpon>Form_Estancia_Prolongada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Estancia_Prolongada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_GRUPOQX_SOAT.Designer.vb">
+      <DependentUpon>Form_GRUPOQX_SOAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_GRUPOQX_SOAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_GRUPO_CUPS.Designer.vb">
+      <DependentUpon>Form_GRUPO_CUPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_GRUPO_CUPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_GRUPO_SOAT.Designer.vb">
+      <DependentUpon>Form_GRUPO_SOAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_GRUPO_SOAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_hemodialisis.Designer.vb">
+      <DependentUpon>Form_hemodialisis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_hemodialisis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_historial_atencion.Designer.vb">
+      <DependentUpon>Form_historial_atencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_historial_atencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Historia_clinica.Designer.vb">
+      <DependentUpon>Form_Historia_clinica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Historia_clinica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Imagenologia.Designer.vb">
+      <DependentUpon>Form_Imagenologia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Imagenologia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Infeccion_IH.Designer.vb">
+      <DependentUpon>Form_Infeccion_IH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Infeccion_IH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_instituciones.Designer.vb">
+      <DependentUpon>Form_instituciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_instituciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ISS.Designer.vb">
+      <DependentUpon>Form_ISS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ISS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_justificacion_antibiotico.Designer.vb">
+      <DependentUpon>Form_justificacion_antibiotico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_justificacion_antibiotico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Listado_Paciente.Designer.vb">
+      <DependentUpon>Form_Listado_Paciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Listado_Paciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Lista_Manual.Designer.vb">
+      <DependentUpon>Form_Lista_Manual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Lista_Manual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_MANUAL_TARIFARIO.Designer.vb">
+      <DependentUpon>Form_MANUAL_TARIFARIO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_MANUAL_TARIFARIO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Medicamentos_NoPos.Designer.vb">
+      <DependentUpon>Form_Medicamentos_NoPos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Medicamentos_NoPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ocupaciones.Designer.vb">
+      <DependentUpon>Form_ocupaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ocupaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_paciente.Designer.vb">
+      <DependentUpon>Form_paciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_paciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Parametro_Ventilacion.Designer.vb">
+      <DependentUpon>Form_Parametro_Ventilacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Parametro_Ventilacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_pedido_comida.Designer.vb">
+      <DependentUpon>Form_pedido_comida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_pedido_comida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Pedido_Servicio.Designer.vb">
+      <DependentUpon>Form_Pedido_Servicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Pedido_Servicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Perfil_Paraclinico.Designer.vb">
+      <DependentUpon>Form_Perfil_Paraclinico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Perfil_Paraclinico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Perfil_Paraclinico_Asignar.Designer.vb">
+      <DependentUpon>Form_Perfil_Paraclinico_Asignar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Perfil_Paraclinico_Asignar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Recetario.Designer.vb">
+      <DependentUpon>Form_Recetario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Recetario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_resultado.Designer.vb">
+      <DependentUpon>Form_resultado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_resultado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SALA_SOAT.Designer.vb">
+      <DependentUpon>Form_SALA_SOAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SALA_SOAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SECCION_CUPS.Designer.vb">
+      <DependentUpon>Form_SECCION_CUPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SECCION_CUPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SECCION_SOAT.Designer.vb">
+      <DependentUpon>Form_SECCION_SOAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SECCION_SOAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SOAT.Designer.vb">
+      <DependentUpon>Form_SOAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SOAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Sonda_Vesical.Designer.vb">
+      <DependentUpon>Form_Sonda_Vesical.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Sonda_Vesical.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SUBGRUPO_CUPS.Designer.vb">
+      <DependentUpon>Form_SUBGRUPO_CUPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_SUBGRUPO_CUPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Tiposidentificacion.Designer.vb">
+      <DependentUpon>Form_Tiposidentificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Tiposidentificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_tipo_regimen.Designer.vb">
+      <DependentUpon>Form_tipo_regimen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_tipo_regimen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_TransfusionSanguinea.Designer.vb">
+      <DependentUpon>Form_TransfusionSanguinea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_TransfusionSanguinea.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Traslado_Ambulancia.Designer.vb">
+      <DependentUpon>Form_Traslado_Ambulancia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Traslado_Ambulancia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Traslado_Cama.Designer.vb">
+      <DependentUpon>Form_Traslado_Cama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Traslado_Cama.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Triage.Designer.vb">
+      <DependentUpon>Form_Triage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_Triage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ValoracionNutricional.Designer.vb">
+      <DependentUpon>Form_ValoracionNutricional.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_ValoracionNutricional.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_vias_ingreso.Designer.vb">
+      <DependentUpon>Form_vias_ingreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Asistencial\Form_vias_ingreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Auditoria\Form_ConfiguracionAuditoria.Designer.vb">
+      <DependentUpon>Form_ConfiguracionAuditoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Auditoria\Form_ConfiguracionAuditoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Auditoria\Form_Periodicidad_de_Insumos .Designer.vb">
+      <DependentUpon>Form_Periodicidad_de_Insumos .vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Auditoria\Form_Periodicidad_de_Insumos .vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Clase_nit.vb" />
+    <Compile Include="UI\ConfiguracionSistema.vb" />
+    <Compile Include="UI\Configuracion\Cualidades.Designer.vb">
+      <DependentUpon>Cualidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Cualidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Empaque.Designer.vb">
+      <DependentUpon>Empaque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Empaque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Equivalencia.Designer.vb">
+      <DependentUpon>Equivalencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Equivalencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Farmacologico.Designer.vb">
+      <DependentUpon>Farmacologico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Farmacologico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormDevolucion.Designer.vb">
+      <DependentUpon>FormDevolucion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormDevolucion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormEntrega.Designer.vb">
+      <DependentUpon>FormEntrega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormEntrega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormPlazo.Designer.vb">
+      <DependentUpon>FormPlazo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormPlazo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormProveedorLab.Designer.vb">
+      <DependentUpon>FormProveedorLab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormProveedorLab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormRegimen.Designer.vb">
+      <DependentUpon>FormRegimen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormRegimen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormUsuarioEnvio.Designer.vb">
+      <DependentUpon>FormUsuarioEnvio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormUsuarioEnvio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormVencimiento.Designer.vb">
+      <DependentUpon>FormVencimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\FormVencimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_asignar_productos.Designer.vb">
+      <DependentUpon>Form_asignar_productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_asignar_productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_Clientes.Designer.vb">
+      <DependentUpon>Form_Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\form_lista_precio_proveedor.designer.vb">
+      <DependentUpon>form_lista_precio_proveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\form_lista_precio_proveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_Proveedores.Designer.vb">
+      <DependentUpon>Form_Proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_Proveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_tipo_Bodega.Designer.vb">
+      <DependentUpon>Form_tipo_Bodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_tipo_Bodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_ver_existencias.Designer.vb">
+      <DependentUpon>Form_ver_existencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Form_ver_existencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Lineas.Designer.vb">
+      <DependentUpon>Lineas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Lineas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\LocalizacionGeo.Designer.vb">
+      <DependentUpon>LocalizacionGeo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\LocalizacionGeo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Marcas.Designer.vb">
+      <DependentUpon>Marcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Marcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Observaciones.Designer.vb">
+      <DependentUpon>Observaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Observaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Presentaciones.Designer.vb">
+      <DependentUpon>Presentaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Presentaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Productos.Designer.vb">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\Transportadoras.Designer.vb">
+      <DependentUpon>Transportadoras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\Transportadoras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuracion\ViasAdministracion.Designer.vb">
+      <DependentUpon>ViasAdministracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuracion\ViasAdministracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ConstanteParametros.vb" />
+    <Compile Include="UI\Constantes.vb" />
+    <Compile Include="UI\ConstantesAsis.vb" />
+    <Compile Include="UI\ConstantesError.vb" />
+    <Compile Include="UI\ConstantesHC.vb" />
+    <Compile Include="UI\Consultas.vb" />
+    <Compile Include="UI\ConsultasAsis.vb" />
+    <Compile Include="UI\ConsultasHC.vb" />
+    <Compile Include="UI\Contrato\Configuracion\Form_Documentos.Designer.vb">
+      <DependentUpon>Form_Documentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Contrato\Configuracion\Form_Documentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Contrato\Configuracion\Form_Otro_Si.Designer.vb">
+      <DependentUpon>Form_Otro_Si.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Contrato\Configuracion\Form_Otro_Si.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Contrato\Configuracion\Form_Tarifas_Servicios.Designer.vb">
+      <DependentUpon>Form_Tarifas_Servicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Contrato\Configuracion\Form_Tarifas_Servicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Contrato\Configuracion\Form_tipo_Referencia.Designer.vb">
+      <DependentUpon>Form_tipo_Referencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Contrato\Configuracion\Form_tipo_Referencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Contrato\Form_Contrato.Designer.vb">
+      <DependentUpon>Form_Contrato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Contrato\Form_Contrato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ConvertirImagen.vb" />
+    <Compile Include="UI\ConvertirNumeroLetra.vb" />
+    <Compile Include="UI\ConvertirNumeros.vb" />
+    <Compile Include="UI\DataGridViewDateTimePickerColumn.vb" />
+    <Compile Include="UI\Documentos\FormConfiguracionRips.Designer.vb">
+      <DependentUpon>FormConfiguracionRips.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Documentos\FormConfiguracionRips.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Documentos\FormFacturaOpcionesActualizar.Designer.vb">
+      <DependentUpon>FormFacturaOpcionesActualizar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Documentos\FormFacturaOpcionesActualizar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Documentos\FormGenerarFactura.Designer.vb">
+      <DependentUpon>FormGenerarFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Documentos\FormGenerarFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Documentos\FormInformeRadicacion.Designer.vb">
+      <DependentUpon>FormInformeRadicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Documentos\FormInformeRadicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Documentos\FormRips.Designer.vb">
+      <DependentUpon>FormRips.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Documentos\FormRips.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DocumentoVistaPrevia.vb" />
+    <Compile Include="UI\ElementoMenu.vb" />
+    <Compile Include="UI\Facturacion\FormConfiguracionFacturacion.Designer.vb">
+      <DependentUpon>FormConfiguracionFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormConfiguracionFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormConfiguracionProcedimiento.Designer.vb">
+      <DependentUpon>FormConfiguracionProcedimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormConfiguracionProcedimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormConfiguracion_ListaChequeo.Designer.vb">
+      <DependentUpon>FormConfiguracion_ListaChequeo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormConfiguracion_ListaChequeo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormFacturaImprimir.Designer.vb">
+      <DependentUpon>FormFacturaImprimir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormFacturaImprimir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormSoporteFacturacion.Designer.vb">
+      <DependentUpon>FormSoporteFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Facturacion\FormSoporteFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Facturacion\Form_Lista_Precio_Medicamento.Designer.vb">
+      <DependentUpon>Form_Lista_Precio_Medicamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Facturacion\Form_Lista_Precio_Medicamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FchaTmpo.vb" />
+    <Compile Include="UI\ftp_reportes.vb" />
+    <Compile Include="UI\Funciones.vb" />
+    <Compile Include="UI\FuncionesExcel.vb" />
+    <Compile Include="UI\General.vb" />
+    <Compile Include="UI\GeneralAsis.vb" />
+    <Compile Include="UI\GeneralHC.vb" />
+    <Compile Include="UI\Informes\FormEstadisticaFacturacion.Designer.vb">
+      <DependentUpon>FormEstadisticaFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Informes\FormEstadisticaFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Informes\FormFacturacionDiaria.Designer.vb">
+      <DependentUpon>FormFacturacionDiaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Informes\FormFacturacionDiaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Informes\FormSeguimientoFacturacion.Designer.vb">
+      <DependentUpon>FormSeguimientoFacturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Informes\FormSeguimientoFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MensajeriaSMS.vb" />
+    <Compile Include="UI\Mensajes.vb" />
+    <Compile Include="UI\Principal\Bienvenido.Designer.vb">
+      <DependentUpon>Bienvenido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Principal\Bienvenido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Principal\FormPrincipal.designer.vb">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Principal\FormPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Principal\Form_AtencionAmbulancia.Designer.vb">
+      <DependentUpon>Form_AtencionAmbulancia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Principal\Form_AtencionAmbulancia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Principal\Inicio.Designer.vb">
+      <DependentUpon>Inicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Principal\Inicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Principal\InicioSesion.Designer.vb">
+      <DependentUpon>InicioSesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Principal\InicioSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Principal\logo.Designer.vb">
+      <DependentUpon>logo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Principal\logo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TitulosForm.vb" />
+    <Compile Include="UI\ValidarDigitacion.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BL\FormFirmaDigital.resx" />
+    <EmbeddedResource Include="BL\FormFirmaDigitalEmple.resx" />
+    <EmbeddedResource Include="BL\Form_firmas.resx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\CertificadoSoat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CertificadoSoat.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\PLANTILLA_CONTROL_LIQUIDO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PLANTILLA_CONTROL_LIQUIDO.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\PLANTILLA_FACTURA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PLANTILLA_FACTURA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\PLANTILLA_FACTURA_D.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PLANTILLA_FACTURA_D.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptAMBUQ.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAMBUQ.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptAnexo1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAnexo11.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptAnexo2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAnexo21.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptAnexo3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAnexo31.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptBraden.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBraden.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptCaja_Copi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCaja_Copi.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptCateterCentral.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCateterCentral.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptComparta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptComparta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptConcurrencia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptConcurrencia.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptConcurrenciaEnfermeria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptConcurrenciaEnfermeria.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptConsetimiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptConsetimiento.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptCPIS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCPIS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptCTC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCTC.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptCuracion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCuracion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptDisentimiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDisentimiento.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptEcocardiograma.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEcocardiograma.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptEcoEstres.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEcoEstres.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptEpicrisis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEpicrisis.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptEscala_Morse.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEscala_Morse.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptEstanciaProlongada.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEstanciaProlongada.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptEvolucionMedica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEvolucionMedica.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptExamenesLab.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptExamenesLab.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptFacturaAsistencial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFacturaAsistencial.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptFacturaCertificado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFacturaCertificado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptFacturaExterna.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFacturaExterna.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptFacturaRadicacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFacturaRadicacion1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptFacturaRemision.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFacturaRemision.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptFisioterapiaNebulizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFisioterapiaNebulizacion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptFisioterapiaOxigeno.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFisioterapiaOxigeno.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptFurips.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFurips1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptGlucometria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGlucometria.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptHemodialisis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHemodialisis.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptHistorialAtencionEgreso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHistorialAtencionEgreso1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptHistorialAtencionIngreso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHistorialAtencionIngreso1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptHojaIngreso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHojaIngreso.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptImagenologia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptImagenologia.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptImagenologiaAtencion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptImagenologiaAtencion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptInfeccionIH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInfeccionIH.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptInfoIngresoAdulto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInfoIngresoAdulto.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptInfoIngresoNeonato.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInfoIngresoNeonato.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptInformeQx.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInformeQx.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptInterconsulta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInterconsulta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptJustificacion_Antibioticos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptJustificacion_Antibioticos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptListaPrecio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListaPrecio1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptNotaEnfermeria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNotaEnfermeria.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptNotaFisioterapia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNotaFisioterapia.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptOrdenInsumoEnfer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOrdenInsumoEnfer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptOrdenInsumoFisio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOrdenInsumoFisio.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptOrdenMedica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOrdenMedica.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptOxigenoFisioterapia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOxigenoFisioterapia.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptParametroVentilacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptParametroVentilacion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptPedidoComidas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPedidoComidas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptPrefactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrefactura.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptRecetario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRecetario.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptRemision.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRemision.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptResultado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptRetiroVoluntario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRetiroVoluntario.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptSabanaAplicacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSabanaAplicacion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptSolicitud_Medicamento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSolicitud_Medicamento.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptSonda_Vesical.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSonda_Vesical.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptTransfusion_Sanguinea.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTransfusion_Sanguinea.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptValorNutricional.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptValorNutricional.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rptVenopuncion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptVenopuncion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rpt_Admisiones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Admisiones1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rep\rpt_Coomeva.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Coomeva.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\Area_Servicio.resx">
+      <DependentUpon>Area_Servicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\FormAreaServicio.resx">
+      <DependentUpon>FormAreaServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\FormAreaServicioConfig.resx">
+      <DependentUpon>FormAreaServicioConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\FormCambiarClave.resx">
+      <DependentUpon>FormCambiarClave.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\FormConfigurarPDoc.resx">
+      <DependentUpon>FormConfigurarPDoc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\FormModulosEmpresa.resx">
+      <DependentUpon>FormModulosEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\FormPuntoServicio.resx">
+      <DependentUpon>FormPuntoServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\FormResoluciones.resx">
+      <DependentUpon>FormResoluciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\FormTercero.resx">
+      <DependentUpon>FormTercero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\Form_BusquedaGeneral.resx">
+      <DependentUpon>Form_BusquedaGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\Form_empresas.resx">
+      <DependentUpon>Form_empresas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\Form_listado_medicamento_dispositivos_medicos.resx">
+      <DependentUpon>Form_listado_medicamento_dispositivos_medicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\Form_Resoluciones.resx">
+      <DependentUpon>Form_Resoluciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\Modulos_perfil.resx">
+      <DependentUpon>Modulos_perfil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\Perfiles.resx">
+      <DependentUpon>Perfiles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Administracion\Punto_Servicio.resx">
+      <DependentUpon>Punto_Servicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Fom_consolidado_comida.resx">
+      <DependentUpon>Fom_consolidado_comida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormAdmision.resx">
+      <DependentUpon>FormAdmision.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormAnestesiologo.resx">
+      <DependentUpon>FormAnestesiologo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormAnexo1.resx">
+      <DependentUpon>FormAnexo1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormAnexo2.resx">
+      <DependentUpon>FormAnexo2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormAnexo3.resx">
+      <DependentUpon>FormAnexo3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormAnexo3Concurrencia.resx">
+      <DependentUpon>FormAnexo3Concurrencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormConcurrencia.resx">
+      <DependentUpon>FormConcurrencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormEpicrisis.resx">
+      <DependentUpon>FormEpicrisis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormEstadisticaEnfermedades.resx">
+      <DependentUpon>FormEstadisticaEnfermedades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormExamenParaclinicos.resx">
+      <DependentUpon>FormExamenParaclinicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormExamenParaclinicosNuevo.resx">
+      <DependentUpon>FormExamenParaclinicosNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormFormatoIngreso.resx">
+      <DependentUpon>FormFormatoIngreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormFuRips.resx">
+      <DependentUpon>FormFuRips.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormGlasgow.resx">
+      <DependentUpon>FormGlasgow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormHojaRuta.resx">
+      <DependentUpon>FormHojaRuta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormInformeQX.resx">
+      <DependentUpon>FormInformeQX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormListaAdmision.resx">
+      <DependentUpon>FormListaAdmision.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormListaExamen.resx">
+      <DependentUpon>FormListaExamen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormOtraConfiguracion.resx">
+      <DependentUpon>FormOtraConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormOxigeno.resx">
+      <DependentUpon>FormOxigeno.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormParametroExamConfiguracion.resx">
+      <DependentUpon>FormParametroExamConfiguracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormParametros.resx">
+      <DependentUpon>FormParametros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormPedidoFarmacia.resx">
+      <DependentUpon>FormPedidoFarmacia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormProgramacionCitaMedica.resx">
+      <DependentUpon>FormProgramacionCitaMedica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormReferenciaExamConf.resx">
+      <DependentUpon>FormReferenciaExamConf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormRemisionAnexo.resx">
+      <DependentUpon>FormRemisionAnexo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormSabanaAplicacionMed.resx">
+      <DependentUpon>FormSabanaAplicacionMed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormSolicitudLab.resx">
+      <DependentUpon>FormSolicitudLab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormTipoExamen.resx">
+      <DependentUpon>FormTipoExamen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormValoracionASCE.resx">
+      <DependentUpon>FormValoracionASCE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\FormVisorHojaRuta.resx">
+      <DependentUpon>FormVisorHojaRuta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_afiliados.resx">
+      <DependentUpon>Form_afiliados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_ARTICULO_SOAT.resx">
+      <DependentUpon>Form_ARTICULO_SOAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Braden.resx">
+      <DependentUpon>Form_Braden.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Camas.resx">
+      <DependentUpon>Form_Camas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_CAPITULO_CUPS.resx">
+      <DependentUpon>Form_CAPITULO_CUPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_CAPITULO_SOAT.resx">
+      <DependentUpon>Form_CAPITULO_SOAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_CARTICULO_SOAT.resx">
+      <DependentUpon>Form_CARTICULO_SOAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_CATEGORIA_CUPS.resx">
+      <DependentUpon>Form_CATEGORIA_CUPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_CateterCentral.resx">
+      <DependentUpon>Form_CateterCentral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_causa_externa.resx">
+      <DependentUpon>Form_causa_externa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_clase_social.resx">
+      <DependentUpon>Form_clase_social.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Comidas.resx">
+      <DependentUpon>Form_Comidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_ComiteIH.resx">
+      <DependentUpon>Form_ComiteIH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Comite_Cientifico.resx">
+      <DependentUpon>Form_Comite_Cientifico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_configuracion_procedimiento.resx">
+      <DependentUpon>Form_configuracion_procedimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Conf_Perfil_Paraclinico.resx">
+      <DependentUpon>Form_Conf_Perfil_Paraclinico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_consolidado_comida_detallado.resx">
+      <DependentUpon>Form_consolidado_comida_detallado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_CPIS.resx">
+      <DependentUpon>Form_CPIS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_CUPS.resx">
+      <DependentUpon>Form_CUPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Curaciones.resx">
+      <DependentUpon>Form_Curaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_destino.resx">
+      <DependentUpon>Form_destino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_diagnostico_cie.resx">
+      <DependentUpon>Form_diagnostico_cie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_ecocardiograma.resx">
+      <DependentUpon>Form_ecocardiograma.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\form_eps.resx">
+      <DependentUpon>form_eps.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_EscalaM.resx">
+      <DependentUpon>Form_EscalaM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_especialidades.resx">
+      <DependentUpon>Form_especialidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_estado_atencion.resx">
+      <DependentUpon>Form_estado_atencion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_estado_civil.resx">
+      <DependentUpon>Form_estado_civil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Estancia_Prolongada.resx">
+      <DependentUpon>Form_Estancia_Prolongada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_GRUPOQX_SOAT.resx">
+      <DependentUpon>Form_GRUPOQX_SOAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_GRUPO_CUPS.resx">
+      <DependentUpon>Form_GRUPO_CUPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_GRUPO_SOAT.resx">
+      <DependentUpon>Form_GRUPO_SOAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_hemodialisis.resx">
+      <DependentUpon>Form_hemodialisis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_historial_atencion.resx">
+      <DependentUpon>Form_historial_atencion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Historia_clinica.resx">
+      <DependentUpon>Form_Historia_clinica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Imagenologia.resx">
+      <DependentUpon>Form_Imagenologia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Infeccion_IH.resx">
+      <DependentUpon>Form_Infeccion_IH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_instituciones.resx">
+      <DependentUpon>Form_instituciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_ISS.resx">
+      <DependentUpon>Form_ISS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_justificacion_antibiotico.resx">
+      <DependentUpon>Form_justificacion_antibiotico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Listado_Paciente.resx">
+      <DependentUpon>Form_Listado_Paciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Lista_Manual.resx">
+      <DependentUpon>Form_Lista_Manual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_MANUAL_TARIFARIO.resx">
+      <DependentUpon>Form_MANUAL_TARIFARIO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Medicamentos_NoPos.resx">
+      <DependentUpon>Form_Medicamentos_NoPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_ocupaciones.resx">
+      <DependentUpon>Form_ocupaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_paciente.resx">
+      <DependentUpon>Form_paciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Parametro_Ventilacion.resx">
+      <DependentUpon>Form_Parametro_Ventilacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_pedido_comida.resx">
+      <DependentUpon>Form_pedido_comida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Pedido_Servicio.resx">
+      <DependentUpon>Form_Pedido_Servicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Perfil_Paraclinico.resx">
+      <DependentUpon>Form_Perfil_Paraclinico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Perfil_Paraclinico_Asignar.resx">
+      <DependentUpon>Form_Perfil_Paraclinico_Asignar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Recetario.resx">
+      <DependentUpon>Form_Recetario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_resultado.resx">
+      <DependentUpon>Form_resultado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_SALA_SOAT.resx">
+      <DependentUpon>Form_SALA_SOAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_SECCION_CUPS.resx">
+      <DependentUpon>Form_SECCION_CUPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_SECCION_SOAT.resx">
+      <DependentUpon>Form_SECCION_SOAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_SOAT.resx">
+      <DependentUpon>Form_SOAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Sonda_Vesical.resx">
+      <DependentUpon>Form_Sonda_Vesical.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_SUBGRUPO_CUPS.resx">
+      <DependentUpon>Form_SUBGRUPO_CUPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Tiposidentificacion.resx">
+      <DependentUpon>Form_Tiposidentificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_tipo_regimen.resx">
+      <DependentUpon>Form_tipo_regimen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_TransfusionSanguinea.resx">
+      <DependentUpon>Form_TransfusionSanguinea.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Traslado_Ambulancia.resx">
+      <DependentUpon>Form_Traslado_Ambulancia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Traslado_Cama.resx">
+      <DependentUpon>Form_Traslado_Cama.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_Triage.resx">
+      <DependentUpon>Form_Triage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_ValoracionNutricional.resx">
+      <DependentUpon>Form_ValoracionNutricional.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Asistencial\Form_vias_ingreso.resx">
+      <DependentUpon>Form_vias_ingreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Auditoria\Form_ConfiguracionAuditoria.resx">
+      <DependentUpon>Form_ConfiguracionAuditoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Auditoria\Form_Periodicidad_de_Insumos .resx">
+      <DependentUpon>Form_Periodicidad_de_Insumos .vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Cualidades.resx">
+      <DependentUpon>Cualidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Empaque.resx">
+      <DependentUpon>Empaque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Equivalencia.resx">
+      <DependentUpon>Equivalencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Farmacologico.resx">
+      <DependentUpon>Farmacologico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\FormDevolucion.resx">
+      <DependentUpon>FormDevolucion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\FormEntrega.resx">
+      <DependentUpon>FormEntrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\FormPlazo.resx">
+      <DependentUpon>FormPlazo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\FormProveedorLab.resx">
+      <DependentUpon>FormProveedorLab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\FormRegimen.resx">
+      <DependentUpon>FormRegimen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\FormUsuarioEnvio.resx">
+      <DependentUpon>FormUsuarioEnvio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\FormVencimiento.resx">
+      <DependentUpon>FormVencimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Form_asignar_productos.resx">
+      <DependentUpon>Form_asignar_productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Form_Clientes.resx">
+      <DependentUpon>Form_Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\form_lista_precio_proveedor.resx">
+      <DependentUpon>form_lista_precio_proveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Form_Proveedores.resx">
+      <DependentUpon>Form_Proveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Form_tipo_Bodega.resx">
+      <DependentUpon>Form_tipo_Bodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Form_ver_existencias.resx">
+      <DependentUpon>Form_ver_existencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Lineas.resx">
+      <DependentUpon>Lineas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\LocalizacionGeo.resx">
+      <DependentUpon>LocalizacionGeo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Marcas.resx">
+      <DependentUpon>Marcas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Observaciones.resx">
+      <DependentUpon>Observaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Presentaciones.resx">
+      <DependentUpon>Presentaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Productos.resx">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\Transportadoras.resx">
+      <DependentUpon>Transportadoras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuracion\ViasAdministracion.resx">
+      <DependentUpon>ViasAdministracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Contrato\Configuracion\Form_Documentos.resx">
+      <DependentUpon>Form_Documentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Contrato\Configuracion\Form_Otro_Si.resx">
+      <DependentUpon>Form_Otro_Si.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Contrato\Configuracion\Form_Tarifas_Servicios.resx">
+      <DependentUpon>Form_Tarifas_Servicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Contrato\Configuracion\Form_tipo_Referencia.resx">
+      <DependentUpon>Form_tipo_Referencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Contrato\Form_Contrato.resx">
+      <DependentUpon>Form_Contrato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Documentos\FormConfiguracionRips.resx">
+      <DependentUpon>FormConfiguracionRips.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Documentos\FormFacturaOpcionesActualizar.resx">
+      <DependentUpon>FormFacturaOpcionesActualizar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Documentos\FormGenerarFactura.resx">
+      <DependentUpon>FormGenerarFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Documentos\FormInformeRadicacion.resx">
+      <DependentUpon>FormInformeRadicacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Documentos\FormRips.resx">
+      <DependentUpon>FormRips.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Facturacion\FormConfiguracionFacturacion.resx">
+      <DependentUpon>FormConfiguracionFacturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Facturacion\FormConfiguracionProcedimiento.resx">
+      <DependentUpon>FormConfiguracionProcedimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Facturacion\FormConfiguracion_ListaChequeo.resx">
+      <DependentUpon>FormConfiguracion_ListaChequeo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Facturacion\FormFacturaImprimir.resx">
+      <DependentUpon>FormFacturaImprimir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Facturacion\FormSoporteFacturacion.resx">
+      <DependentUpon>FormSoporteFacturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Facturacion\Form_Lista_Precio_Medicamento.resx">
+      <DependentUpon>Form_Lista_Precio_Medicamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Informes\FormEstadisticaFacturacion.resx">
+      <DependentUpon>FormEstadisticaFacturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Informes\FormFacturacionDiaria.resx">
+      <DependentUpon>FormFacturacionDiaria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Informes\FormSeguimientoFacturacion.resx">
+      <DependentUpon>FormSeguimientoFacturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Principal\Bienvenido.resx">
+      <DependentUpon>Bienvenido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Principal\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Principal\Form_AtencionAmbulancia.resx">
+      <DependentUpon>Form_AtencionAmbulancia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Principal\Inicio.resx">
+      <DependentUpon>Inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Principal\InicioSesion.resx">
+      <DependentUpon>InicioSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Principal\logo.resx">
+      <DependentUpon>logo.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +2656,10 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
