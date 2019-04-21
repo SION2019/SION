@@ -1830,12 +1830,6 @@
     <Compile Include="UI\Principal\FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Principal\Form_AtencionAmbulancia.Designer.vb">
-      <DependentUpon>Form_AtencionAmbulancia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Principal\Form_AtencionAmbulancia.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UI\Principal\Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
@@ -2631,9 +2625,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Principal\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Principal\Form_AtencionAmbulancia.resx">
-      <DependentUpon>Form_AtencionAmbulancia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Principal\Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>

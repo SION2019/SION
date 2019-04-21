@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class AreaServicioDAL
 
-    Public Sub guardar(ByRef txtCodigo As Object, nombre As String, observaciones As String, codigo_menu As String, NEONATAL As Boolean, color As Integer)
+    Public Sub guardar(ByRef txtCodigo As Object, nombre As String, observaciones As String, codigo_menu As String, NEONATAL As Boolean)
         Try
             Using comando = New SqlCommand()
                 Using trnsccion = FormPrincipal.cnxion.BeginTransaction()
@@ -21,7 +21,6 @@ Public Class AreaServicioDAL
                         comando.Parameters("@Menu").Value = codigo_menu
                         comando.Parameters.Add(New SqlParameter("@nEONATAL", SqlDbType.Bit))
                         comando.Parameters("@nEONATAL").Value = NEONATAL
-                        comando.Parameters.Add(New SqlParameter("@Color", SqlDbType.Int)).Value = color
                         comando.Parameters.Add(New SqlParameter("@Usuario_actualizacion", SqlDbType.Int))
                         comando.Parameters("@Usuario_actualizacion").Value = SesionActual.idUsuario
                         comando.ExecuteNonQuery()
@@ -44,7 +43,6 @@ Public Class AreaServicioDAL
                         comando.Parameters("@Menu").Value = codigo_menu
                         comando.Parameters.Add(New SqlParameter("@nEONATAL", SqlDbType.Bit))
                         comando.Parameters("@nEONATAL").Value = NEONATAL
-                        comando.Parameters.Add(New SqlParameter("@Color", SqlDbType.Int)).Value = color
                         comando.Parameters.Add(New SqlParameter("@Usuario_Creacion", SqlDbType.Int))
                         comando.Parameters("@Usuario_Creacion").Value = SesionActual.idUsuario
                         txtCodigo.Text = CType(comando.ExecuteScalar, String)
