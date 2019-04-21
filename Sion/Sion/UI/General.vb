@@ -1462,7 +1462,7 @@ Public Class General
                         vControl.Datasource.Clear()
                     End If
                 End If
-                diseñoDGV(vControl)
+                personalizarDatagrid(vControl)
             Else
                 ' mira a ve si es un contenedor
                 limpiarControles(vControl)
@@ -1475,23 +1475,40 @@ Public Class General
 
 
     Private Shared Sub aplicarIcono(pFormulario As Object)
-        Dim myBitmap As New Bitmap(My.Resources.CHFinalIcono1)
-        Dim HIcon As IntPtr = myBitmap.GetHicon()
-        Dim newIcon As Icon = Icon.FromHandle(HIcon)
-        pFormulario.icon = New Icon(newIcon, New Size(48, 48))
+        ''Dim myBitmap As New Bitmap(My.Resources.CHFinalIcono1)
+        ''Dim HIcon As IntPtr = myBitmap.GetHicon()
+        ''Dim newIcon As Icon = Icon.FromHandle(HIcon)
+        'pFormulario.icon = New Icon(newIcon, New Size(48, 48))
     End Sub
 
-    Public Shared Sub diseñoDGV(ByRef dgv As DataGridView)
+    Public Shared Sub personalizarDatagrid(ByRef dgv As DataGridView)
+        dgv.BackgroundColor = Color.White
         dgv.DefaultCellStyle.BackColor = Color.White
         dgv.DefaultCellStyle.ForeColor = Color.Black
-        dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
-        dgv.DefaultCellStyle.SelectionForeColor = Color.White
-        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(192, 255, 192)
-        dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
-        dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
-        dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
-        dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgv.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue
+        dgv.DefaultCellStyle.SelectionForeColor = Color.Black
         dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+        dgv.EnableHeadersVisualStyles = False
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue
+        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+        dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+        dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.LightSteelBlue
+        For indiceColumna = 0 To dgv.Columns.Count - 1
+            dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Next
+        AddHandler dgv.CellMouseEnter, AddressOf resaltarFila
+        AddHandler dgv.CellMouseLeave, AddressOf quitarResaltadoFila
+    End Sub
+    Public Shared Sub resaltarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+        If e.RowIndex >= 0 Then
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(226, 234, 243)
+        End If
+    End Sub
+    Public Shared Sub quitarResaltadoFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+        If e.RowIndex >= 0 Then
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
+        End If
     End Sub
 
     Public Shared Sub formNuevo(ByRef pForm As Object,
